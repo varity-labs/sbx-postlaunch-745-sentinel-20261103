@@ -1,7 +1,7 @@
 import http from 'node:http';
 import { Pool } from 'pg';
 import { timingSafeEqual } from 'node:crypto';
-const version = 'v1';
+const version = 'v2';
 const pool = new Pool({ connectionString: process.env.DATABASE_URL, max: 1, connectionTimeoutMillis: 3000, query_timeout: 3000 });
 const token = Buffer.from(process.env.SENTINEL_WRITE_TOKEN || '');
 http.createServer(async (req, res) => {
